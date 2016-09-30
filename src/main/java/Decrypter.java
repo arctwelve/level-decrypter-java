@@ -8,6 +8,7 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
+
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -24,8 +25,8 @@ public class Decrypter {
     private static final String SITE_URL = "http://www.totaljerkface.com/get_level.hw";
 
     private static final String IV = "abcd1234";
-    private static final String KEY = "eatshit";
-    private static final String FULLKEY = KEY + AUTHOR_ID;
+    private static final byte[] KEY = {101, 97, 116, 115, 104, 105, 116};
+    private static final String FULLKEY = new String(KEY) + AUTHOR_ID;
 
 
     public static void main(String[] args) throws Exception {
